@@ -11,63 +11,64 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilters, setShowFilters] = useState(false);
 
-  // Mock property data
+  // Mock property data for Croatia
   const properties = [
     {
       id: 1,
-      title: "Modern lägenhet i centrala Stockholm",
-      price: 4200000,
-      address: "Södermalm, Stockholm",
-      rooms: 3,
-      size: 75,
-      bathrooms: 1,
+      title: "Moderna vila s pogledom na more",
+      price: 850000,
+      address: "Split, Dalmacija",
+      rooms: 4,
+      size: 120,
+      bathrooms: 2,
       image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
     },
     {
       id: 2,
-      title: "Charmig villa med trädgård",
-      price: 6800000,
-      address: "Danderyd, Stockholm",
-      rooms: 5,
-      size: 140,
+      title: "Luksuzni apartman u centru",
+      price: 450000,
+      address: "Zagreb, Centar",
+      rooms: 3,
+      size: 85,
       bathrooms: 2,
       image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop"
     },
     {
       id: 3,
-      title: "Ljus studentlägenhet",
-      price: 2100000,
-      address: "Lund, Skåne",
-      rooms: 2,
-      size: 45,
-      bathrooms: 1,
+      title: "Kuća na obali mora",
+      price: 1200000,
+      address: "Dubrovnik, Dubrovačko-neretvanska",
+      rooms: 5,
+      size: 180,
+      bathrooms: 3,
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-white">
+      {/* Header with Croatian theme */}
+      <header className="border-b bg-gradient-to-r from-croatian-blue via-white to-croatian-red shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-primary">HemSök</h1>
+            <h1 className="text-2xl font-bold text-white drop-shadow-md">NekretnineHR</h1>
             <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-primary">Köpa</a>
-              <a href="#" className="text-muted-foreground hover:text-primary">Sälja</a>
-              <a href="#" className="text-muted-foreground hover:text-primary">Värdera</a>
-              <a href="#" className="text-muted-foreground hover:text-primary">Nyheter</a>
+              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Kupovina</a>
+              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Prodaja</a>
+              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Procjena</a>
+              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Vijesti</a>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Hitta ditt drömhem</h2>
+      {/* Hero Section with Croatian styling */}
+      <section className="bg-gradient-to-br from-croatian-blue/20 via-white to-croatian-red/10 py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%233b82f6" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl font-bold mb-4 text-croatian-blue">Pronađite svoj dom iz snova</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Sök bland tusentals bostäder till salu i hela Sverige
+            Pretražite tisuće nekretnina za prodaju diljem Hrvatske
           </p>
           
           {/* Search Bar */}
@@ -76,22 +77,22 @@ const Index = () => {
               <div className="relative flex-1">
                 <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                 <Input
-                  placeholder="Stad, område eller kommun..."
+                  placeholder="Grad, općina ili županija..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12"
+                  className="pl-10 h-12 border-2 border-croatian-blue/20 focus:border-croatian-blue"
                 />
               </div>
               <Button 
                 onClick={() => setShowFilters(!showFilters)}
                 variant="outline"
-                className="h-12 px-6"
+                className="h-12 px-6 border-2 border-croatian-blue text-croatian-blue hover:bg-croatian-blue hover:text-white"
               >
-                Filter
+                Filteri
               </Button>
-              <Button className="h-12 px-8">
+              <Button className="h-12 px-8 bg-croatian-red hover:bg-croatian-red/90">
                 <Search className="mr-2 h-4 w-4" />
-                Sök
+                Pretraži
               </Button>
             </div>
             
@@ -107,13 +108,13 @@ const Index = () => {
       {/* Results Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="flex justify-between items-center mb-8">
-          <h3 className="text-2xl font-semibold">
-            {properties.length} bostäder till salu
+          <h3 className="text-2xl font-semibold text-croatian-blue">
+            {properties.length} nekretnina za prodaju
           </h3>
           <div className="flex gap-2">
-            <Button variant="outline" size="sm">Senast inlagda</Button>
-            <Button variant="outline" size="sm">Lägsta pris</Button>
-            <Button variant="outline" size="sm">Högsta pris</Button>
+            <Button variant="outline" size="sm" className="border-croatian-blue text-croatian-blue hover:bg-croatian-blue hover:text-white">Najnovije</Button>
+            <Button variant="outline" size="sm" className="border-croatian-blue text-croatian-blue hover:bg-croatian-blue hover:text-white">Najniža cijena</Button>
+            <Button variant="outline" size="sm" className="border-croatian-blue text-croatian-blue hover:bg-croatian-blue hover:text-white">Najviša cijena</Button>
           </div>
         </div>
 
@@ -125,25 +126,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="bg-muted py-16">
+      {/* Statistics Section with Croatian colors */}
+      <section className="bg-gradient-to-r from-croatian-blue/10 via-white to-croatian-red/10 py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <h4 className="text-3xl font-bold text-primary">50,000+</h4>
-              <p className="text-muted-foreground">Aktiva annonser</p>
+            <div className="p-6 rounded-lg bg-white shadow-md border-l-4 border-croatian-blue">
+              <h4 className="text-3xl font-bold text-croatian-blue">25,000+</h4>
+              <p className="text-muted-foreground">Aktivnih oglasa</p>
             </div>
-            <div>
-              <h4 className="text-3xl font-bold text-primary">2,500+</h4>
-              <p className="text-muted-foreground">Sålda i veckan</p>
+            <div className="p-6 rounded-lg bg-white shadow-md border-l-4 border-croatian-red">
+              <h4 className="text-3xl font-bold text-croatian-red">1,200+</h4>
+              <p className="text-muted-foreground">Prodano ovaj tjedan</p>
             </div>
-            <div>
-              <h4 className="text-3xl font-bold text-primary">15 år</h4>
-              <p className="text-muted-foreground">På marknaden</p>
+            <div className="p-6 rounded-lg bg-white shadow-md border-l-4 border-croatian-blue">
+              <h4 className="text-3xl font-bold text-croatian-blue">10 godina</h4>
+              <p className="text-muted-foreground">Na tržištu</p>
             </div>
-            <div>
-              <h4 className="text-3xl font-bold text-primary">98%</h4>
-              <p className="text-muted-foreground">Nöjda kunder</p>
+            <div className="p-6 rounded-lg bg-white shadow-md border-l-4 border-croatian-red">
+              <h4 className="text-3xl font-bold text-croatian-red">97%</h4>
+              <p className="text-muted-foreground">Zadovoljnih klijenata</p>
             </div>
           </div>
         </div>

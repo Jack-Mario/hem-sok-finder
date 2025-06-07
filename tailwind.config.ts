@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Croatian theme colors
+				'croatian-blue': 'hsl(var(--croatian-blue))',
+				'croatian-red': 'hsl(var(--croatian-red))',
+				'croatian-white': 'hsl(var(--croatian-white))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
