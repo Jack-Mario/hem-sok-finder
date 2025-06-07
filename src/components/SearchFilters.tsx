@@ -8,27 +8,27 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 export const SearchFilters = () => {
   const croatianCounties = [
-    "Zagrebačka županija",
-    "Krapinsko-zagorska županija", 
-    "Sisačko-moslavačka županija",
-    "Karlovačka županija",
-    "Varaždinska županija",
-    "Koprivničko-križevačka županija",
-    "Bjelovarsko-bilogorska županija",
-    "Primorsko-goranska županija",
-    "Ličko-senjska županija",
-    "Virovitičko-podravska županija",
-    "Požeško-slavonska županija",
-    "Brodsko-posavska županija",
-    "Zadarska županija",
-    "Osječko-baranjska županija",
-    "Šibensko-kninska županija",
-    "Vukovarsko-srijemska županija",
-    "Splitsko-dalmatinska županija",
-    "Istarska županija",
-    "Dubrovačko-neretvanska županija",
-    "Međimurska županija",
-    "Grad Zagreb"
+    "Zagrebs län",
+    "Krapina-Zagorje län", 
+    "Sisak-Moslavina län",
+    "Karlovac län",
+    "Varaždin län",
+    "Koprivnica-Križevci län",
+    "Bjelovar-Bilogora län",
+    "Primorje-Gorski kotar län",
+    "Lika-Senj län",
+    "Virovitica-Podravina län",
+    "Požega-Slavonien län",
+    "Brod-Posavina län",
+    "Zadar län",
+    "Osijek-Baranja län",
+    "Šibenik-Knin län",
+    "Vukovar-Syrmien län",
+    "Split-Dalmatien län",
+    "Istrien län",
+    "Dubrovnik-Neretva län",
+    "Međimurje län",
+    "Zagreb stad"
   ];
 
   return (
@@ -37,10 +37,10 @@ export const SearchFilters = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {/* County/Region */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-croatian-blue">Županija</Label>
+            <Label className="text-sm font-medium text-croatian-blue">Län</Label>
             <Select>
               <SelectTrigger className="border-croatian-blue/30 focus:border-croatian-blue">
-                <SelectValue placeholder="Odaberite..." />
+                <SelectValue placeholder="Välj..." />
               </SelectTrigger>
               <SelectContent className="max-h-60">
                 {croatianCounties.map((county) => (
@@ -54,7 +54,7 @@ export const SearchFilters = () => {
 
           {/* Price Range */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-croatian-blue">Cijena (EUR)</Label>
+            <Label className="text-sm font-medium text-croatian-blue">Pris (EUR)</Label>
             <div className="flex gap-2">
               <Input placeholder="Min" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
               <Input placeholder="Max" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
@@ -63,7 +63,7 @@ export const SearchFilters = () => {
 
           {/* Rooms */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-croatian-blue">Broj soba</Label>
+            <Label className="text-sm font-medium text-croatian-blue">Antal rum</Label>
             <div className="flex gap-2">
               <Input placeholder="Min" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
               <Input placeholder="Max" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
@@ -72,7 +72,7 @@ export const SearchFilters = () => {
 
           {/* Size */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-croatian-blue">Površina (m²)</Label>
+            <Label className="text-sm font-medium text-croatian-blue">Yta (m²)</Label>
             <div className="flex gap-2">
               <Input placeholder="Min" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
               <Input placeholder="Max" type="number" className="border-croatian-blue/30 focus:border-croatian-blue" />
@@ -81,19 +81,19 @@ export const SearchFilters = () => {
 
           {/* Property Type */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-croatian-blue">Tip nekretnine</Label>
+            <Label className="text-sm font-medium text-croatian-blue">Fastighetstyp</Label>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Checkbox id="apartment" className="border-croatian-blue data-[state=checked]:bg-croatian-blue" />
-                <Label htmlFor="apartment" className="text-sm">Apartman</Label>
+                <Label htmlFor="apartment" className="text-sm">Lägenhet</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="house" className="border-croatian-blue data-[state=checked]:bg-croatian-blue" />
-                <Label htmlFor="house" className="text-sm">Kuća</Label>
+                <Label htmlFor="house" className="text-sm">Hus</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="villa" className="border-croatian-blue data-[state=checked]:bg-croatian-blue" />
-                <Label htmlFor="villa" className="text-sm">Vila</Label>
+                <Label htmlFor="villa" className="text-sm">Villa</Label>
               </div>
             </div>
           </div>
@@ -101,10 +101,10 @@ export const SearchFilters = () => {
 
         <div className="flex gap-2 mt-4 pt-4 border-t border-croatian-blue/20">
           <Button variant="outline" size="sm" className="border-croatian-red text-croatian-red hover:bg-croatian-red hover:text-white">
-            Obriši filtere
+            Rensa filter
           </Button>
           <Button size="sm" className="bg-croatian-blue hover:bg-croatian-blue/90">
-            Primijeni filtere
+            Tillämpa filter
           </Button>
         </div>
       </CardContent>

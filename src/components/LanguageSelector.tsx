@@ -10,6 +10,7 @@ import {
 import { Languages, ChevronDown } from "lucide-react";
 
 const languages = [
+  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
   { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' }

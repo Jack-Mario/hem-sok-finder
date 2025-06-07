@@ -21,7 +21,7 @@ interface PropertyCardProps {
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('hr-HR', {
+    return new Intl.NumberFormat('sv-SE', {
       style: 'currency',
       currency: 'EUR',
       minimumFractionDigits: 0,
@@ -47,7 +47,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
           <Heart className="h-4 w-4" />
         </Button>
         <Badge className="absolute top-2 left-2 bg-croatian-red text-white hover:bg-croatian-red/90">
-          Na prodaju
+          Till salu
         </Badge>
       </div>
       
@@ -66,7 +66,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 <Bed className="h-4 w-4 text-croatian-blue" />
-                <span>{property.rooms} soba</span>
+                <span>{property.rooms} rum</span>
               </div>
               <div className="flex items-center gap-1">
                 <Square className="h-4 w-4 text-croatian-blue" />
@@ -90,7 +90,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
                 </p>
               </div>
               <Button size="sm" className="bg-croatian-red hover:bg-croatian-red/90 text-white">
-                Više detalja
+                Mer info
               </Button>
             </div>
           </div>
