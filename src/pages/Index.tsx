@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, MapPin, Bed, Bath, Square } from "lucide-react";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SearchFilters } from "@/components/SearchFilters";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -52,12 +53,15 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-white drop-shadow-md">NekretnineHR</h1>
-            <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Kupovina</a>
-              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Prodaja</a>
-              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Procjena</a>
-              <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Vijesti</a>
-            </nav>
+            <div className="flex items-center gap-6">
+              <nav className="hidden md:flex space-x-6">
+                <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Kupovina</a>
+                <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Prodaja</a>
+                <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Procjena</a>
+                <a href="#" className="text-white hover:text-red-100 transition-colors font-medium">Vijesti</a>
+              </nav>
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       </header>
